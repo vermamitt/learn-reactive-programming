@@ -7,7 +7,7 @@ import reactor.test.StepVerifier;
 public class FluxTest {
 
     @Test
-    public void should_send_data_one_by_one(){
+    public void should_send_data_one_by_one() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .log();
@@ -16,7 +16,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_send_exception_on_fourth_onEvent(){
+    public void should_send_exception_on_fourth_onEvent() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .concatWith(Flux.error(new RuntimeException("Runtime exception occured")))
@@ -26,7 +26,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_get_complete_message(){
+    public void should_get_complete_message() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 //.concatWith(Flux.error(new RuntimeException("Runtime exception occured")))
@@ -37,7 +37,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_not_get_complete_message(){
+    public void should_not_get_complete_message() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .concatWith(Flux.error(new RuntimeException("Runtime exception occured")))
@@ -48,7 +48,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_not_get_after_message(){
+    public void should_not_get_after_message() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .concatWith(Flux.error(new RuntimeException("Runtime exception occured")))
@@ -60,7 +60,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_get_after_message(){
+    public void should_get_after_message() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 //.concatWith(Flux.error(new RuntimeException("Runtime exception occured")))
@@ -72,7 +72,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_assert_flux_without_error(){
+    public void should_assert_flux_without_error() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .log();
@@ -85,7 +85,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_assert_flux_with_error(){
+    public void should_assert_flux_with_error() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .concatWith(Flux.error(new RuntimeException("Custom Runtime Error")))
@@ -100,7 +100,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_assert_flux_with_error_message(){
+    public void should_assert_flux_with_error_message() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .concatWith(Flux.error(new RuntimeException("Custom Runtime Error")))
@@ -113,7 +113,7 @@ public class FluxTest {
     }
 
     @Test
-    public void should_assert_flux_with_count(){
+    public void should_assert_flux_with_count() {
 
         Flux<String> items = Flux.just("Item 1", "Item 2", "Item 3")
                 .concatWith(Flux.error(new RuntimeException("Custom Runtime Error")))
